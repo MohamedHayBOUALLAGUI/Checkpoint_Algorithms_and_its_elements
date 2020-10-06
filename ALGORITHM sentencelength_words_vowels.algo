@@ -1,0 +1,26 @@
+ALGORITHM sentencelength_words_vowels
+VAR
+    sentence[] : STRING;
+    sentenceLength : INTEGER;
+    numVowels: INTEGER :=0;
+    numWords: INTEGER:=0;
+
+BEGIN
+    Write ('Please enter your sentence');
+    Read(sentence[]);
+    sentenceLength := length(sentence[]);
+    Write ('The length of your sentence is', sentenceLength);
+    FOR i FROM 0 TO (sentenceLength-1) STEP 1  DO
+        if (sentence[i]='a' OR sentence[i]='A' OR sentence[i]='e' 
+            OR sentence[i]='E' OR sentence[i]='i' OR sentence[i]='I' 
+            OR sentence[i]='o' OR sentence[i]='O' OR sentence[i]='U' OR sentence[i]='u') THEN
+        numVowels := numVowels+1;
+        END_IF   
+    WHILE (sentence[i]=' ' OR sentence[i]='.') DO
+            numWords := numWords+1;
+    END_WHILE          
+    END_FOR
+     Write('Vowels number is',numVowels);
+     Write('Words number is ',numWords);
+
+END
